@@ -297,7 +297,7 @@ input, select, textarea {
   justify-content: center;
   min-height: 220px;
 }
-#code-surface canvas, #code-surface svg { max-width: 100%; height: auto; }
+#code-surface canvas, #code-surface svg, #code-surface img { max-width: 100%; height: auto; }
 #view-code-value {
   margin-top: 16px;
   color: white;

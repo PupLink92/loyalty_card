@@ -95,6 +95,15 @@ function buildColorGrid(selected) {
   }
 }
 
+function guessCodeType(value) {
+  const trimmed = value.trim();
+  if (!trimmed) return null;
+  if (/^\d{13}$/.test(trimmed)) return "EAN13";
+  if (/^\d{12}$/.test(trimmed)) return "UPC";
+  if (/^\d+$/.test(trimmed)) return "CODE128";
+  return "QR";
+}
+
 function selectedColor() {
   const sel = el("color-grid").querySelector(".color-swatch.selected");
   return sel ? sel.dataset.color : COLORS[0];
@@ -190,11 +199,17 @@ function openView(id) {
   surface.innerHTML = "";
 
   if (card.codeType === "QR") {
-    const canvas = document.createElement("canvas");
-    surface.appendChild(canvas);
-    QRCode.toCanvas(canvas, card.codeValue, { width: 260, margin: 1 }, (err) => {
-      if (err) surface.textContent = "Impossibile generare il QR code.";
-    });
+    try {
+      const qr = qrcode(0, "M");
+      qr.addData(card.codeValue);
+      qr.make();
+      const img = document.createElement("img");
+      img.src = qr.createDataURL(8, 8);
+      img.alt = card.name;
+      surface.appendChild(img);
+    } catch (e) {
+      surface.textContent = "Impossibile generare il QR code.";
+    }
   } else {
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     surface.appendChild(svg);
@@ -307,6 +322,10 @@ function init() {
   el("edit-cancel").addEventListener("click", () => showScreen("home"));
   el("edit-save").addEventListener("click", saveForm);
   el("btn-delete").addEventListener("click", deleteCurrentCard);
+  el("input-code-value").addEventListener("input", (e) => {
+    const guessed = guessCodeType(e.target.value);
+    if (guessed) el("input-code-type").value = guessed;
+  });
 
   el("btn-scan-open").addEventListener("click", () => {
     scanTarget = "add";

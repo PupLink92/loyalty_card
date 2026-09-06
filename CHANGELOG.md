@@ -2,6 +2,16 @@
 
 Tutte le modifiche rilevanti al progetto Portacarte sono documentate in questo file.
 
+## [0.1.1] - 2026-09-06
+
+### Corretto
+
+- **`web/`**: il visualizzatore QR non apriva le carte di tipo QR Code. Causa: la libreria caricata da CDN (`qrcode@1.5.3/build/qrcode.min.js`) non esiste nel pacchetto npm pubblicato, quindi lo script falliva silenziosamente e il tap sulla carta non produceva alcun effetto. Sostituita con `qrcode-generator`, verificata funzionante.
+
+### Aggiunto
+
+- **`web/`**: il tipo di codice (barcode Code128/EAN-13/UPC-A o QR) viene ora rilevato automaticamente mentre si digita il valore nel form di aggiunta/modifica carta, in base al formato del testo inserito.
+
 ## [0.1] - 2026-09-06
 
 ### Aggiunto
