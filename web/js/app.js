@@ -1,9 +1,10 @@
 // Portacarte — logica applicativa (nessuna dipendenza da build tool).
 
 const COLORS = [
-  "#4f46e5", "#7c3aed", "#db2777", "#dc2626",
-  "#ea580c", "#d97706", "#16a34a", "#0891b2",
-  "#2563eb", "#525252",
+  "#4f46e5", "#6d28d9", "#7c3aed", "#a855f7", "#c026d3", "#db2777",
+  "#e11d48", "#dc2626", "#ea580c", "#f59e0b", "#d97706", "#84cc16",
+  "#16a34a", "#059669", "#0d9488", "#0891b2", "#0ea5e9", "#2563eb",
+  "#1e3a8a", "#525252",
 ];
 
 const el = (id) => document.getElementById(id);
@@ -68,21 +69,50 @@ function escapeHtml(str) {
 
 /* ---------------- Form aggiungi / modifica ---------------- */
 
+let currentCardColor = COLORS[0];
+
 function buildColorGrid(selected) {
+  currentCardColor = selected || COLORS[0];
+  const isPreset = COLORS.includes(currentCardColor);
   const grid = el("color-grid");
   grid.innerHTML = "";
+
+  const clearSelection = () => {
+    grid.querySelectorAll(".color-swatch.selected, .color-swatch-custom-wrap.selected")
+      .forEach((n) => n.classList.remove("selected"));
+  };
+
   for (const color of COLORS) {
     const dot = document.createElement("button");
     dot.type = "button";
-    dot.className = "color-swatch" + (color === selected ? " selected" : "");
+    dot.className = "color-swatch" + (isPreset && color === currentCardColor ? " selected" : "");
     dot.style.background = color;
     dot.dataset.color = color;
     dot.addEventListener("click", () => {
-      grid.querySelectorAll(".color-swatch").forEach((n) => n.classList.remove("selected"));
+      currentCardColor = color;
+      clearSelection();
       dot.classList.add("selected");
     });
     grid.appendChild(dot);
   }
+
+  const customWrap = document.createElement("label");
+  customWrap.className = "color-swatch-custom-wrap" + (!isPreset ? " selected" : "");
+  const customInput = document.createElement("input");
+  customInput.type = "color";
+  customInput.className = "color-swatch-custom";
+  customInput.value = isPreset ? "#808080" : currentCardColor;
+  customInput.addEventListener("input", () => {
+    currentCardColor = customInput.value;
+    clearSelection();
+    customWrap.classList.add("selected");
+  });
+  customWrap.appendChild(customInput);
+  const icon = document.createElement("span");
+  icon.className = "color-swatch-custom-icon";
+  icon.textContent = "🎨";
+  customWrap.appendChild(icon);
+  grid.appendChild(customWrap);
 }
 
 function guessCodeType(value) {
@@ -95,8 +125,7 @@ function guessCodeType(value) {
 }
 
 function selectedColor() {
-  const sel = el("color-grid").querySelector(".color-swatch.selected");
-  return sel ? sel.dataset.color : COLORS[0];
+  return currentCardColor;
 }
 
 function openAddForm(prefill) {
