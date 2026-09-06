@@ -39,20 +39,10 @@ function renderHome() {
     const tile = document.createElement("button");
     tile.className = "card-tile";
     tile.style.background = `linear-gradient(135deg, ${card.color}, ${shade(card.color, -18)})`;
-    tile.innerHTML = `
-      <div class="brand-dot">${initials(card.name)}</div>
-      <div>
-        <div class="name">${escapeHtml(card.name)}</div>
-        <div class="type">${labelForType(card.codeType)}</div>
-      </div>
-    `;
+    tile.innerHTML = `<div class="name">${escapeHtml(card.name)}</div>`;
     tile.addEventListener("click", () => openView(card.id));
     list.appendChild(tile);
   }
-}
-
-function initials(name) {
-  return (name || "?").trim().slice(0, 2).toUpperCase();
 }
 
 function shade(hex, percent) {

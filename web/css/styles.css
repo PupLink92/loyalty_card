@@ -117,35 +117,22 @@ input, select, textarea {
   padding: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   color: white;
   overflow: hidden;
   box-shadow: 0 6px 16px rgba(0,0,0,0.35);
   text-align: left;
 }
 .card-tile:active { transform: scale(0.97); }
-.card-tile .brand-dot {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 14px;
-}
 .card-tile .name {
   font-weight: 700;
-  font-size: 16px;
-  line-height: 1.2;
+  font-size: 20px;
+  line-height: 1.15;
   text-shadow: 0 1px 3px rgba(0,0,0,0.25);
-}
-.card-tile .type {
-  font-size: 11px;
-  opacity: 0.85;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .fab {
