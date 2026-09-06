@@ -32,6 +32,9 @@ jobs:
         with:
           enablement: true
 
+      - name: Inject cache-busting build id
+        run: sed -i "s/__BUILD__/${{ github.sha }}/g" web/index.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
