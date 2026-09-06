@@ -1,5 +1,5 @@
 // Service worker Portacarte: app shell offline + cache runtime delle librerie CDN.
-const CACHE_VERSION = "portacarte-v1";
+const CACHE_VERSION = "portacarte-v2";
 const APP_SHELL = [
   "./",
   "./index.html",

@@ -18,6 +18,25 @@ function showScreen(name) {
   if (name !== "scan") stopScanner();
 }
 
+async function hardRefresh() {
+  toast("Aggiornamento in corso…");
+  try {
+    if ("serviceWorker" in navigator) {
+      const regs = await navigator.serviceWorker.getRegistrations();
+      await Promise.all(regs.map((reg) => reg.unregister()));
+    }
+    if ("caches" in window) {
+      const keys = await caches.keys();
+      await Promise.all(keys.map((k) => caches.delete(k)));
+    }
+  } catch (e) {
+    // se qualcosa fallisce, ricarichiamo comunque
+  }
+  const url = new URL(location.href);
+  url.searchParams.set("_r", Date.now());
+  location.replace(url.toString());
+}
+
 function toast(msg) {
   const t = el("toast");
   t.textContent = msg;
@@ -359,6 +378,7 @@ function init() {
     if (viewingId) openEditForm(viewingId);
   });
 
+  el("btn-refresh").addEventListener("click", hardRefresh);
   el("btn-settings").addEventListener("click", () => showScreen("settings"));
   el("settings-close").addEventListener("click", () => showScreen("home"));
   el("btn-export").addEventListener("click", exportBackup);
