@@ -1,0 +1,405 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5206D0F4626C39B7B5E8DC01 /* LoyaltyWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E31801689433177DC52BE2 /* LoyaltyWalletApp.swift */; };
+		FF42BAB4ADFA5DCC890C7A45 /* LoyaltyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81FD5B756110CF1FD95616C /* LoyaltyCard.swift */; };
+		C993EEFBD45444A5E20EF32D /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4234E38368502E7CB64DE1 /* Color+Hex.swift */; };
+		03BC4B14C7562630EC80A4D5 /* CodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB501F07FD45FBFF23E2E785 /* CodeGenerator.swift */; };
+		D9EDA4FC03241B4E003A2068 /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111DF203C8BB813669154A78 /* CardListView.swift */; };
+		A723FAD689D235D3A24F6C51 /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC8E21A911EABC07AFEF46E /* AddCardView.swift */; };
+		DFEF52BFE8300D959DDD1434 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5E4BA5E1F2F8852528C4CB /* CardDetailView.swift */; };
+		4BBCB02CEA9594E1205CB5A9 /* BarcodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603E1EFF5DD80B9720E3A611 /* BarcodeScannerView.swift */; };
+		8284DEBE69FE2CE9419675F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF9F6F57F26E41B499F63A8 /* Assets.xcassets */; };
+		024ABB442661219A11F427DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF6786A731A34C906EA2877 /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B9E31801689433177DC52BE2 /* LoyaltyWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltyWalletApp.swift; sourceTree = "<group>"; };
+		F81FD5B756110CF1FD95616C /* LoyaltyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoyaltyCard.swift; sourceTree = "<group>"; };
+		9D4234E38368502E7CB64DE1 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		AB501F07FD45FBFF23E2E785 /* CodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGenerator.swift; sourceTree = "<group>"; };
+		111DF203C8BB813669154A78 /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
+		9DC8E21A911EABC07AFEF46E /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
+		5E5E4BA5E1F2F8852528C4CB /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
+		603E1EFF5DD80B9720E3A611 /* BarcodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerView.swift; sourceTree = "<group>"; };
+		CDF9F6F57F26E41B499F63A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEF6786A731A34C906EA2877 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FE1DB1A17D5F8FCC1ADFE815 /* LoyaltyWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoyaltyWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C530C64D128BF304FB341AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01AE69330F4A1C64E5EBB94F = {
+			isa = PBXGroup;
+			children = (
+				D03AEF37AEACD2EC5B0E9A59 /* LoyaltyWallet */,
+				F2758E16A4A20F7AC71B1C43 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F2758E16A4A20F7AC71B1C43 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE1DB1A17D5F8FCC1ADFE815 /* LoyaltyWallet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D03AEF37AEACD2EC5B0E9A59 /* LoyaltyWallet */ = {
+			isa = PBXGroup;
+			children = (
+				B9E31801689433177DC52BE2 /* LoyaltyWalletApp.swift */,
+				C22479182E8CBA42A3DC6291 /* Models */,
+				EF4E34BE3B62C89E982930D3 /* Extensions */,
+				6B62B0A4B37FEDF3AE73351B /* Support */,
+				A291C9FAEA3F080D1AA964BA /* Views */,
+				CDF9F6F57F26E41B499F63A8 /* Assets.xcassets */,
+				5F86647E8A7E124A00328D54 /* Preview Content */,
+			);
+			path = LoyaltyWallet;
+			sourceTree = "<group>";
+		};
+		C22479182E8CBA42A3DC6291 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F81FD5B756110CF1FD95616C /* LoyaltyCard.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EF4E34BE3B62C89E982930D3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9D4234E38368502E7CB64DE1 /* Color+Hex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6B62B0A4B37FEDF3AE73351B /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				AB501F07FD45FBFF23E2E785 /* CodeGenerator.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		A291C9FAEA3F080D1AA964BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				111DF203C8BB813669154A78 /* CardListView.swift */,
+				9DC8E21A911EABC07AFEF46E /* AddCardView.swift */,
+				5E5E4BA5E1F2F8852528C4CB /* CardDetailView.swift */,
+				603E1EFF5DD80B9720E3A611 /* BarcodeScannerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5F86647E8A7E124A00328D54 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CEF6786A731A34C906EA2877 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8E46A9571443F03445211892 /* LoyaltyWallet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0FA88538B79D3738B8B292A /* Build configuration list for PBXNativeTarget "LoyaltyWallet" */;
+			buildPhases = (
+				742A20AFD27A4062E83F7C5A /* Sources */,
+				9C530C64D128BF304FB341AF /* Frameworks */,
+				72E5D43CC71ADC643FD589EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LoyaltyWallet;
+			productName = LoyaltyWallet;
+			productReference = FE1DB1A17D5F8FCC1ADFE815 /* LoyaltyWallet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A068C36946B76912E3B2E8C9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					8E46A9571443F03445211892 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+				};
+			};
+			buildConfigurationList = 95CA4FB4E87728899B8FF643 /* Build configuration list for PBXProject "LoyaltyWallet" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 01AE69330F4A1C64E5EBB94F;
+			productRefGroup = F2758E16A4A20F7AC71B1C43 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8E46A9571443F03445211892 /* LoyaltyWallet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		72E5D43CC71ADC643FD589EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				024ABB442661219A11F427DA /* Preview Assets.xcassets in Resources */,
+				8284DEBE69FE2CE9419675F8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		742A20AFD27A4062E83F7C5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A723FAD689D235D3A24F6C51 /* AddCardView.swift in Sources */,
+				D9EDA4FC03241B4E003A2068 /* CardListView.swift in Sources */,
+				FF42BAB4ADFA5DCC890C7A45 /* LoyaltyCard.swift in Sources */,
+				5206D0F4626C39B7B5E8DC01 /* LoyaltyWalletApp.swift in Sources */,
+				C993EEFBD45444A5E20EF32D /* Color+Hex.swift in Sources */,
+				03BC4B14C7562630EC80A4D5 /* CodeGenerator.swift in Sources */,
+				DFEF52BFE8300D959DDD1434 /* CardDetailView.swift in Sources */,
+				4BBCB02CEA9594E1205CB5A9 /* BarcodeScannerView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		173A32D7A422DBB34596128B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3C760E8754CB971261C8F588 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		898BD1933974A6A698082350 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LoyaltyWallet/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Portacarte usa la fotocamera per scansionare il codice a barre o QR delle tue carte fedeltà.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.puplink.portacarte";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D158D31541EC4D84385A0DF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LoyaltyWallet/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Portacarte usa la fotocamera per scansionare il codice a barre o QR delle tue carte fedeltà.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.puplink.portacarte";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		95CA4FB4E87728899B8FF643 /* Build configuration list for PBXProject "LoyaltyWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				173A32D7A422DBB34596128B /* Debug */,
+				3C760E8754CB971261C8F588 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0FA88538B79D3738B8B292A /* Build configuration list for PBXNativeTarget "LoyaltyWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				898BD1933974A6A698082350 /* Debug */,
+				D158D31541EC4D84385A0DF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A068C36946B76912E3B2E8C9 /* Project object */;
+}

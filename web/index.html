@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+<title>Portacarte</title>
+<meta name="description" content="Le tue carte fedeltà, senza pubblicità. Tocca una carta e mostri il codice a schermo intero.">
+
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0b0b12">
+
+<!-- iOS PWA -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Portacarte">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-192.png">
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============ HOME ============ -->
+<section id="screen-home" class="screen active">
+  <header>
+    <h1>Portacarte</h1>
+    <button class="icon-btn" id="btn-settings" aria-label="Impostazioni">⚙️</button>
+  </header>
+
+  <div id="empty-state">
+    <div class="emoji">💳</div>
+    <div>Ancora nessuna carta fedeltà.<br>Aggiungi la prima per iniziare.</div>
+    <button class="cta" id="empty-add-btn">Aggiungi una carta</button>
+  </div>
+
+  <div id="card-list"></div>
+
+  <button class="fab" id="btn-add" aria-label="Aggiungi carta">+</button>
+</section>
+
+<!-- ============ ADD / EDIT CARD ============ -->
+<section id="screen-edit" class="screen">
+  <div class="form-header">
+    <button class="text-btn" id="edit-cancel">Annulla</button>
+    <h2 id="edit-title">Nuova carta</h2>
+    <button class="text-btn primary" id="edit-save">Salva</button>
+  </div>
+  <div class="form-body">
+    <button class="scan-btn" id="btn-scan-open" type="button">📷 Scansiona codice</button>
+
+    <div class="field" style="margin-top:18px;">
+      <label for="input-name">Nome negozio / carta</label>
+      <input type="text" id="input-name" placeholder="Es. Esselunga, Decathlon…" autocomplete="off">
+    </div>
+
+    <div class="field">
+      <label for="input-code-type">Tipo di codice</label>
+      <select id="input-code-type">
+        <option value="CODE128">Barcode (Code 128)</option>
+        <option value="EAN13">Barcode (EAN-13)</option>
+        <option value="UPC">Barcode (UPC-A)</option>
+        <option value="QR">QR Code</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="input-code-value">Codice</label>
+      <input type="text" id="input-code-value" placeholder="Numero o testo del codice" inputmode="text" autocomplete="off">
+    </div>
+
+    <div class="field">
+      <label>Colore carta</label>
+      <div class="color-grid" id="color-grid"></div>
+    </div>
+
+    <button class="danger-btn" id="btn-delete" type="button" style="display:none;">Elimina carta</button>
+  </div>
+</section>
+
+<!-- ============ SCANNER ============ -->
+<section id="screen-scan" class="screen">
+  <div class="form-header" style="background:#000;">
+    <button class="text-btn" id="scan-cancel" style="color:#fff;">Annulla</button>
+    <h2 style="color:#fff;">Inquadra il codice</h2>
+    <span style="width:60px;"></span>
+  </div>
+  <div id="scan-video-wrap">
+    <div class="scan-frame"></div>
+    <div id="scan-status">Avvio fotocamera…</div>
+  </div>
+</section>
+
+<!-- ============ FULLSCREEN CODE VIEW ============ -->
+<section id="screen-view" class="screen">
+  <div id="view-topbar">
+    <button class="icon-btn" id="view-close" aria-label="Chiudi">✕</button>
+    <button class="icon-btn" id="view-edit" aria-label="Modifica">✎</button>
+  </div>
+  <div id="view-store-name"></div>
+  <div id="view-code-type"></div>
+  <div id="code-surface"></div>
+  <div id="view-code-value"></div>
+  <div id="wake-lock-hint"></div>
+</section>
+
+<!-- ============ SETTINGS ============ -->
+<section id="screen-settings" class="screen">
+  <div class="form-header">
+    <button class="text-btn" id="settings-close">Chiudi</button>
+    <h2>Impostazioni</h2>
+    <span style="width:60px;"></span>
+  </div>
+  <div class="form-body">
+    <button class="settings-row" id="btn-export" style="width:100%;">
+      <span>⬆️ Esporta backup (JSON)</span>
+    </button>
+    <button class="settings-row" id="btn-import" style="width:100%;">
+      <span>⬇️ Importa backup (JSON)</span>
+    </button>
+    <input type="file" id="import-file" accept="application/json" style="display:none;">
+    <div style="margin-top:20px; color:var(--text-dim); font-size:13px; line-height:1.5; padding: 0 4px;">
+      Portacarte v0.1 — le carte sono salvate solo su questo dispositivo, nessun account e nessuna pubblicità.
+    </div>
+  </div>
+</section>
+
+<div class="toast" id="toast"></div>
+
+<!-- Librerie da CDN: generazione barcode/QR e scansione -->
+<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# Xcode
+ios/**/xcuserdata/
+ios/**/*.xcuserstate
+ios/**/DerivedData/
+ios/**/.build/
+ios/**/*.xccheckout
+ios/**/*.moved-aside
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
